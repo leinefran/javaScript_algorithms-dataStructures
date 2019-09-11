@@ -13,23 +13,24 @@ function validAnagram (str1, str2) {
 	return false;
     }
 
-    // transform both strings into array
-    let first_array = str1.split("");
-    let second_array = str2.split("");
+    else {
+	// transform both strings into array
+	let first_array = str1.split("");
+	let second_array = str2.split("");
 
-    // sort arrays alphabetically
-    first_array = first_array.sort();
-    second_array = second_array.sort();
+	// sort arrays alphabetically
+	first_array = first_array.sort();
+	second_array = second_array.sort();
 
-    // check if both are equal
-    for (let i = 0; i < first_array.length; i++){
-	if (first_array[i] === second_array[i]) {
-	    console.log(first_array);
-	    console.log(second_array);
-	    return true;
-	} else {
-	    return false;
+	// check if both are equal
+	for (let i = 0; i < first_array.length; i++){
+	    if (first_array[i] !== second_array[i]) {
+		console.log(first_array);
+		console.log(second_array);
+		return false;
+	    }
 	}
+	return true;
     }
 }
 console.log(validAnagram('', '')); //true
