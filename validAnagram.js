@@ -13,33 +13,27 @@ function validAnagram (str1, str2) {
 	return false;
     }
 
-    let charCounterStr1 = {};
-    let charCounterStr2 = {};
+    // transform both strings into array
+    let first_array = str1.split("");
+    let second_array = str2.split("");
 
-    // iterate through each char of the str1;
-    for (let val of str1) {
-	charCounterStr1[val] = (charCounterStr1[val] || 0) + 1;
-    }
+    // sort arrays alphabetically, and check if both are equal
+    first_array = first_array.sort();
+    second_array = second_array.sort();
 
-    // same for the str2;
-    for (let val of str2) {
-	charCounterStr2[val] = (charCounterStr2[val] || 0) + 1;
-  }
+    console.log(first_array);
+    console.log(second_array);
 
-    console.log(charCounterStr1);
-    console.log(charCounterStr2);
-    console.log('\n');
-
-    if (charCounterStr1 === charCounterStr2) {
+    if (first_array == second_array) {
 	return true;
     } else {
 	return false;
     }
 }
-console.log(validAnagram('', ''));
-console.log(validAnagram('aaz', 'zza'));
-console.log(validAnagram('anagram', 'nagaram'));
-console.log(validAnagram('rat', 'car'));
-console.log(validAnagram('awesome', 'awesom'));
-console.log(validAnagram('amanapalgamate', 'palgamatenadama'));
-console.log(validAnagram('qwerty', 'qeywrt'));
+console.log(validAnagram('', '')); //true
+console.log(validAnagram('aaz', 'zza')); //false
+console.log(validAnagram('anagram', 'nagaram')); //true
+console.log(validAnagram('rat', 'car')); //false
+console.log(validAnagram('awesome', 'awesom')); //false
+console.log(validAnagram('amanapalgamate', 'palgamatenadama')); //false
+console.log(validAnagram('qwerty', 'twreyq')); //true
