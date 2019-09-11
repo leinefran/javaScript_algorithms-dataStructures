@@ -17,17 +17,19 @@ function validAnagram (str1, str2) {
     let first_array = str1.split("");
     let second_array = str2.split("");
 
-    // sort arrays alphabetically, and check if both are equal
+    // sort arrays alphabetically
     first_array = first_array.sort();
     second_array = second_array.sort();
 
-    console.log(first_array);
-    console.log(second_array);
-
-    if (first_array == second_array) {
-	return true;
-    } else {
-	return false;
+    // check if both are equal
+    for (let i = 0; i < first_array.length; i++){
+	if (first_array[i] === second_array[i]) {
+	    console.log(first_array);
+	    console.log(second_array);
+	    return true;
+	} else {
+	    return false;
+	}
     }
 }
 console.log(validAnagram('', '')); //true
